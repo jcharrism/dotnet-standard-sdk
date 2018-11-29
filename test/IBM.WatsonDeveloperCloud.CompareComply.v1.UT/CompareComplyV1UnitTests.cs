@@ -47,6 +47,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1.UT
         {
             CompareComplyService service =
                 new CompareComplyService(CreateClient());
+            service.VersionDate = "2018-02-16";
 
             Assert.IsNotNull(service);
         }
@@ -123,7 +124,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1.UT
             {
                 IamApiKey = "iamApikey"
             };
-            CompareComplyService service = new CompareComplyService(tokenOptions, "versionDate");
+            CompareComplyService service = new CompareComplyService(tokenOptions, Arg.Any<string>());
             service.VersionDate = null;
 
             using (FileStream fs = Arg.Any<FileStream>())
@@ -181,7 +182,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1.UT
 
             request.WithArgument(Arg.Any<string>(), Arg.Any<string>())
                 .Returns(request);
-            request.WithBody<FileStream>(Arg.Any<FileStream>())
+            request.WithBodyContent(Arg.Any<MultipartFormDataContent>())
                 .Returns(request);
             request.As<HTMLReturn>()
                 .Returns(Task.FromResult(response));

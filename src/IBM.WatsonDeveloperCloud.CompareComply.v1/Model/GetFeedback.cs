@@ -15,8 +15,8 @@
 *
 */
 
-using Newtonsoft.Json;
 using System;
+using Newtonsoft.Json;
 
 namespace IBM.WatsonDeveloperCloud.CompareComply.v1.Model
 {

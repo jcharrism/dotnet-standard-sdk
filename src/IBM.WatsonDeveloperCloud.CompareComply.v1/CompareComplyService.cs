@@ -79,7 +79,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
         ///
         /// Uploads an input file to the service instance, which returns an HTML version of the document.
         /// </summary>
-        /// <param name="file">The file to convert.</param>
+        /// <param name="file">The input file to convert.</param>
         /// <param name="modelId">The analysis model to be used by the service. For the `/v1/element_classification` and
         /// `/v1/comparison` methods, the default is `contracts`. For the `/v1/tables` method, the default is `tables`.
         /// These defaults apply to the standalone methods as well as to the methods' use in batch-processing requests.
@@ -112,6 +112,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
 
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+
                 var restRequest = client.PostAsync($"{this.Endpoint}/v1/html_conversion");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -138,14 +139,15 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
         /// Uploads a file to the service instance, which returns an analysis of the document's structural and semantic
         /// elements.
         /// </summary>
-        /// <param name="file">The PDF file to convert.</param>
+        /// <param name="file">The input file to convert.</param>
         /// <param name="modelId">The analysis model to be used by the service. For the `/v1/element_classification` and
         /// `/v1/comparison` methods, the default is `contracts`. For the `/v1/tables` method, the default is `tables`.
         /// These defaults apply to the standalone methods as well as to the methods' use in batch-processing requests.
         /// (optional)</param>
+        /// <param name="fileContentType">The content type of file. (optional)</param>
         /// <param name="customData">Custom data object to pass data including custom request headers.</param>
         /// <returns><see cref="ClassifyReturn" />ClassifyReturn</returns>
-        public ClassifyReturn ClassifyElements(System.IO.FileStream file, string modelId = null, Dictionary<string, object> customData = null)
+        public ClassifyReturn ClassifyElements(System.IO.FileStream file, string modelId = null, string fileContentType = null, Dictionary<string, object> customData = null)
         {
             if (file == null)
                 throw new ArgumentNullException(nameof(file));
@@ -163,13 +165,14 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
                 {
                     var fileContent = new ByteArrayContent((file as Stream).ReadAllBytes());
                     System.Net.Http.Headers.MediaTypeHeaderValue contentType;
-                    System.Net.Http.Headers.MediaTypeHeaderValue.TryParse("application/pdf", out contentType);
+                    System.Net.Http.Headers.MediaTypeHeaderValue.TryParse(fileContentType, out contentType);
                     fileContent.Headers.ContentType = contentType;
                     formData.Add(fileContent, "file", file.Name);
                 }
 
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+
                 var restRequest = client.PostAsync($"{this.Endpoint}/v1/element_classification");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -195,14 +198,15 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
         ///
         /// Uploads a document file to the service instance, which extracts the contents of the document's tables.
         /// </summary>
-        /// <param name="file">The PDF file on which to run table extraction.</param>
+        /// <param name="file">The input file on which to run table extraction.</param>
         /// <param name="modelId">The analysis model to be used by the service. For the `/v1/element_classification` and
         /// `/v1/comparison` methods, the default is `contracts`. For the `/v1/tables` method, the default is `tables`.
         /// These defaults apply to the standalone methods as well as to the methods' use in batch-processing requests.
         /// (optional)</param>
+        /// <param name="fileContentType">The content type of file. (optional)</param>
         /// <param name="customData">Custom data object to pass data including custom request headers.</param>
         /// <returns><see cref="TableReturn" />TableReturn</returns>
-        public TableReturn ExtractTables(System.IO.FileStream file, string modelId = null, Dictionary<string, object> customData = null)
+        public TableReturn ExtractTables(System.IO.FileStream file, string modelId = null, string fileContentType = null, Dictionary<string, object> customData = null)
         {
             if (file == null)
                 throw new ArgumentNullException(nameof(file));
@@ -220,13 +224,14 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
                 {
                     var fileContent = new ByteArrayContent((file as Stream).ReadAllBytes());
                     System.Net.Http.Headers.MediaTypeHeaderValue contentType;
-                    System.Net.Http.Headers.MediaTypeHeaderValue.TryParse("application/pdf", out contentType);
+                    System.Net.Http.Headers.MediaTypeHeaderValue.TryParse(fileContentType, out contentType);
                     fileContent.Headers.ContentType = contentType;
                     formData.Add(fileContent, "file", file.Name);
                 }
 
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+                
                 var restRequest = client.PostAsync($"{this.Endpoint}/v1/tables");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -303,6 +308,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
 
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+
                 var restRequest = client.PostAsync($"{this.Endpoint}/v1/comparison");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -352,6 +358,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
             {
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+                
                 var restRequest = client.PostAsync($"{this.Endpoint}/v1/feedback");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -396,6 +403,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
             {
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+
                 var restRequest = client.DeleteAsync($"{this.Endpoint}/v1/feedback/{feedbackId}");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -440,6 +448,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
             {
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+                
                 var restRequest = client.GetAsync($"{this.Endpoint}/v1/feedback/{feedbackId}");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -517,6 +526,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
             {
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+                
                 var restRequest = client.GetAsync($"{this.Endpoint}/v1/feedback");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -671,6 +681,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
 
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+                
                 var restRequest = client.PostAsync($"{this.Endpoint}/v1/batches");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -716,6 +727,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
             {
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+                
                 var restRequest = client.GetAsync($"{this.Endpoint}/v1/batches/{batchId}");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -741,7 +753,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
         /// </summary>
         /// <param name="customData">Custom data object to pass data including custom request headers.</param>
         /// <returns><see cref="Batches" />Batches</returns>
-        public Batches GetBatches(Dictionary<string, object> customData = null)
+        public Batches ListBatches(Dictionary<string, object> customData = null)
         {
 
             if (string.IsNullOrEmpty(VersionDate))
@@ -753,6 +765,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
             {
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+                
                 var restRequest = client.GetAsync($"{this.Endpoint}/v1/batches");
 
                 restRequest.WithArgument("version", VersionDate);
@@ -802,6 +815,7 @@ namespace IBM.WatsonDeveloperCloud.CompareComply.v1
             {
                 IClient client;
                 client = this.Client.WithAuthentication(_tokenManager.GetToken());
+                
                 var restRequest = client.PutAsync($"{this.Endpoint}/v1/batches/{batchId}");
 
                 restRequest.WithArgument("version", VersionDate);
