@@ -32,40 +32,35 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// <value>
         /// The type of action to invoke.
         /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ActionTypeEnum
+        public class ActionTypeValue
         {
-            
+
             /// <summary>
             /// Enum CLIENT for client
             /// </summary>
-            [EnumMember(Value = "client")]
-            CLIENT,
-            
+            public const string CLIENT = "client";
+
             /// <summary>
             /// Enum SERVER for server
             /// </summary>
-            [EnumMember(Value = "server")]
-            SERVER,
-            
+            public const string SERVER = "server";
+
             /// <summary>
             /// Enum CLOUD_FUNCTION for cloud_function
             /// </summary>
-            [EnumMember(Value = "cloud_function")]
-            CLOUD_FUNCTION,
-            
+            public const string CLOUD_FUNCTION = "cloud_function";
+
             /// <summary>
             /// Enum WEB_ACTION for web_action
             /// </summary>
-            [EnumMember(Value = "web_action")]
-            WEB_ACTION
+            public const string WEB_ACTION = "web_action";
         }
 
         /// <summary>
         /// The type of action to invoke.
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public ActionTypeEnum? ActionType { get; set; }
+        public string ActionType { get; set; }
         /// <summary>
         /// The name of the action.
         /// </summary>
@@ -75,7 +70,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// A map of key/value pairs to be provided to the action.
         /// </summary>
         [JsonProperty("parameters", NullValueHandling = NullValueHandling.Ignore)]
-        public object Parameters { get; set; }
+        public dynamic Parameters { get; set; }
         /// <summary>
         /// The location in the dialog context where the result of the action is stored.
         /// </summary>

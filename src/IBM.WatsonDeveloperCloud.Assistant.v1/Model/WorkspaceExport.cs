@@ -31,49 +31,40 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// <summary>
         /// The current status of the workspace.
         /// </summary>
-        /// <value>
-        /// The current status of the workspace.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
+        public class StatusValue
         {
-            
+
             /// <summary>
-            /// Enum NON_EXISTENT for Non Existent
+            /// Value NON_EXISTENT for Non Existent
             /// </summary>
-            [EnumMember(Value = "Non Existent")]
-            NON_EXISTENT,
-            
+            public const string NON_EXISTENT = "Non Existent";
+
             /// <summary>
-            /// Enum TRAINING for Training
+            /// Value TRAINING for Training
             /// </summary>
-            [EnumMember(Value = "Training")]
-            TRAINING,
-            
+            public const string TRAINING = "Training";
+
             /// <summary>
-            /// Enum FAILED for Failed
+            /// Value FAILED for Failed
             /// </summary>
-            [EnumMember(Value = "Failed")]
-            FAILED,
-            
+            public const string FAILED = "Failed";
+
             /// <summary>
-            /// Enum AVAILABLE for Available
+            /// Value AVAILABLE for Available
             /// </summary>
-            [EnumMember(Value = "Available")]
-            AVAILABLE,
-            
+            public const string AVAILABLE = "Available";
+
             /// <summary>
-            /// Enum UNAVAILABLE for Unavailable
+            /// Value UNAVAILABLE for Unavailable
             /// </summary>
-            [EnumMember(Value = "Unavailable")]
-            UNAVAILABLE
+            public const string UNAVAILABLE = "Unavailable";
         }
 
         /// <summary>
         /// The current status of the workspace.
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusEnum? Status { get; set; }
+        public string Status { get; set; }
         /// <summary>
         /// The name of the workspace.
         /// </summary>

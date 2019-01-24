@@ -34,75 +34,55 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// **Note:** The **suggestion** response type is part of the disambiguation feature, which is only available
         /// for Premium users.
         /// </summary>
-        /// <value>
-        /// The type of response returned by the dialog node. The specified response type must be supported by the
-        /// client application or channel.
-        ///
-        /// **Note:** The **suggestion** response type is part of the disambiguation feature, which is only available
-        /// for Premium users.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ResponseTypeEnum
+        public class ResponseTypeEnum
         {
             
             /// <summary>
-            /// Enum TEXT for text
+            /// Value TEXT for text
             /// </summary>
-            [EnumMember(Value = "text")]
-            TEXT,
-            
+            public const string TEXT = "text";
+
             /// <summary>
-            /// Enum PAUSE for pause
+            /// Value PAUSE for pause
             /// </summary>
-            [EnumMember(Value = "pause")]
-            PAUSE,
-            
+            public const string PAUSE = "pause";
+
             /// <summary>
-            /// Enum IMAGE for image
+            /// Value IMAGE for image
             /// </summary>
-            [EnumMember(Value = "image")]
-            IMAGE,
-            
+            public const string IMAGE = "image";
+
             /// <summary>
-            /// Enum OPTION for option
+            /// Value OPTION for option
             /// </summary>
-            [EnumMember(Value = "option")]
-            OPTION,
-            
+            public const string OPTION = "option";
+
             /// <summary>
-            /// Enum CONNECT_TO_AGENT for connect_to_agent
+            /// Value CONNECT_TO_AGENT for connect_to_agent
             /// </summary>
-            [EnumMember(Value = "connect_to_agent")]
-            CONNECT_TO_AGENT,
-            
+            public const string CONNECT_TO_AGENT = "connect_to_agent";
+
             /// <summary>
-            /// Enum SUGGESTION for suggestion
+            /// Value SUGGESTION for suggestion
             /// </summary>
-            [EnumMember(Value = "suggestion")]
-            SUGGESTION
+            public const string SUGGESTION = "suggestion";
         }
 
         /// <summary>
         /// The preferred type of control to display.
         /// </summary>
-        /// <value>
-        /// The preferred type of control to display.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PreferenceEnum
+        public class PreferenceEnum
         {
-            
+
             /// <summary>
-            /// Enum DROPDOWN for dropdown
+            /// Value DROPDOWN for dropdown
             /// </summary>
-            [EnumMember(Value = "dropdown")]
-            DROPDOWN,
-            
+            public const string DROPDOWN = "dropdown";
+
             /// <summary>
-            /// Enum BUTTON for button
+            /// Value BUTTON for button
             /// </summary>
-            [EnumMember(Value = "button")]
-            BUTTON
+            public const string BUTTON = "button";
         }
 
         /// <summary>
@@ -113,12 +93,12 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// for Premium users.
         /// </summary>
         [JsonProperty("response_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ResponseTypeEnum? ResponseType { get; set; }
+        public string ResponseType { get; set; }
         /// <summary>
         /// The preferred type of control to display.
         /// </summary>
         [JsonProperty("preference", NullValueHandling = NullValueHandling.Ignore)]
-        public PreferenceEnum? Preference { get; set; }
+        public string Preference { get; set; }
         /// <summary>
         /// The text of the response.
         /// </summary>

@@ -15,6 +15,7 @@
 *
 */
 
+
 namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
 {
     /// <summary>
@@ -23,5 +24,4 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
     public class SystemResponse : BaseModel
     {
     }
-
 }

@@ -40,5 +40,4 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         [JsonProperty("conditions", NullValueHandling = NullValueHandling.Ignore)]
         public string Conditions { get; set; }
     }
-
 }

@@ -29,42 +29,34 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// <summary>
         /// The severity of the log message.
         /// </summary>
-        /// <value>
-        /// The severity of the log message.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum LevelEnum
+        public class LevelValue
         {
-            
+
             /// <summary>
-            /// Enum INFO for info
+            /// Const INFO for info
             /// </summary>
-            [EnumMember(Value = "info")]
-            INFO,
-            
+            public const string INFO = "info";
+
             /// <summary>
-            /// Enum ERROR for error
+            /// Const ERROR for error
             /// </summary>
-            [EnumMember(Value = "error")]
-            ERROR,
-            
+            public const string ERROR = "error";
+
             /// <summary>
-            /// Enum WARN for warn
+            /// Const WARN for warn
             /// </summary>
-            [EnumMember(Value = "warn")]
-            WARN
+            public const string WARN = "warn";
         }
 
         /// <summary>
         /// The severity of the log message.
         /// </summary>
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
-        public LevelEnum? Level { get; set; }
+        public string Level { get; set; }
         /// <summary>
         /// The text of the log message.
         /// </summary>
         [JsonProperty("msg", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Msg { get; set; }
+        public string Msg { get; set; }
     }
-
 }

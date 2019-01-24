@@ -30,227 +30,183 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// <summary>
         /// How the dialog node is processed.
         /// </summary>
-        /// <value>
-        /// How the dialog node is processed.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum NodeTypeEnum
+        public class NodeTypeValue
         {
-            
+
             /// <summary>
-            /// Enum STANDARD for standard
+            /// Value STANDARD for standard
             /// </summary>
-            [EnumMember(Value = "standard")]
-            STANDARD,
-            
+            public const string STANDARD = "standard";
+
             /// <summary>
-            /// Enum EVENT_HANDLER for event_handler
+            /// Value EVENT_HANDLER for event_handler
             /// </summary>
-            [EnumMember(Value = "event_handler")]
-            EVENT_HANDLER,
-            
+            public const string EVENT_HANDLER = "event_handler";
+
             /// <summary>
-            /// Enum FRAME for frame
+            /// Value FRAME for frame
             /// </summary>
-            [EnumMember(Value = "frame")]
-            FRAME,
-            
+            public const string FRAME = "frame";
+
             /// <summary>
-            /// Enum SLOT for slot
+            /// Value SLOT for slot
             /// </summary>
-            [EnumMember(Value = "slot")]
-            SLOT,
-            
+            public const string SLOT = "slot";
+
             /// <summary>
-            /// Enum RESPONSE_CONDITION for response_condition
+            /// Value RESPONSE_CONDITION for response_condition
             /// </summary>
-            [EnumMember(Value = "response_condition")]
-            RESPONSE_CONDITION,
-            
+            public const string RESPONSE_CONDITION = "response_condition";
+
             /// <summary>
-            /// Enum FOLDER for folder
+            /// Value FOLDER for folder
             /// </summary>
-            [EnumMember(Value = "folder")]
-            FOLDER
+            public const string FOLDER = "folder";
         }
 
         /// <summary>
         /// How an `event_handler` node is processed.
         /// </summary>
-        /// <value>
-        /// How an `event_handler` node is processed.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EventNameEnum
+        public class EventNameValue
         {
-            
+
             /// <summary>
-            /// Enum FOCUS for focus
+            /// Value FOCUS for focus
             /// </summary>
-            [EnumMember(Value = "focus")]
-            FOCUS,
-            
+            public const string FOCUS = "focus";
+
             /// <summary>
-            /// Enum INPUT for input
+            /// Value INPUT for input
             /// </summary>
-            [EnumMember(Value = "input")]
-            INPUT,
-            
+            public const string INPUT = "input";
+
             /// <summary>
-            /// Enum FILLED for filled
+            /// Value FILLED for filled
             /// </summary>
-            [EnumMember(Value = "filled")]
-            FILLED,
-            
+            public const string FILLED = "filled";
+
             /// <summary>
-            /// Enum VALIDATE for validate
+            /// Value VALIDATE for validate
             /// </summary>
-            [EnumMember(Value = "validate")]
-            VALIDATE,
-            
+            public const string VALIDATE = "validate";
+
             /// <summary>
-            /// Enum FILLED_MULTIPLE for filled_multiple
+            /// Value FILLED_MULTIPLE for filled_multiple
             /// </summary>
-            [EnumMember(Value = "filled_multiple")]
-            FILLED_MULTIPLE,
-            
+            public const string FILLED_MULTIPLE = "filled_multiple";
+
             /// <summary>
-            /// Enum GENERIC for generic
+            /// Value GENERIC for generic
             /// </summary>
-            [EnumMember(Value = "generic")]
-            GENERIC,
-            
+            public const string GENERIC = "generic";
+
             /// <summary>
-            /// Enum NOMATCH for nomatch
+            /// Value NOMATCH for nomatch
             /// </summary>
-            [EnumMember(Value = "nomatch")]
-            NOMATCH,
-            
+            public const string NOMATCH = "nomatch";
+
             /// <summary>
-            /// Enum NOMATCH_RESPONSES_DEPLETED for nomatch_responses_depleted
+            /// Value NOMATCH_RESPONSES_DEPLETED for nomatch_responses_depleted
             /// </summary>
-            [EnumMember(Value = "nomatch_responses_depleted")]
-            NOMATCH_RESPONSES_DEPLETED,
-            
+            public const string NOMATCH_RESPONSES_DEPLETED = "nomatch_responses_depleted";
+
             /// <summary>
-            /// Enum DIGRESSION_RETURN_PROMPT for digression_return_prompt
+            /// Value DIGRESSION_RETURN_PROMPT for digression_return_prompt
             /// </summary>
-            [EnumMember(Value = "digression_return_prompt")]
-            DIGRESSION_RETURN_PROMPT
+            public const string DIGRESSION_RETURN_PROMPT = "digression_return_prompt";
         }
 
         /// <summary>
         /// Whether this top-level dialog node can be digressed into.
         /// </summary>
-        /// <value>
-        /// Whether this top-level dialog node can be digressed into.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum DigressInEnum
+        public class DigressInValue
         {
-            
+
             /// <summary>
-            /// Enum NOT_AVAILABLE for not_available
+            /// Value NOT_AVAILABLE for not_available
             /// </summary>
-            [EnumMember(Value = "not_available")]
-            NOT_AVAILABLE,
-            
+            public const string NOT_AVAILABLE = "not_available";
+
             /// <summary>
-            /// Enum RETURNS for returns
+            /// Value RETURNS for returns
             /// </summary>
-            [EnumMember(Value = "returns")]
-            RETURNS,
-            
+            public const string RETURNS = "returns";
+
             /// <summary>
-            /// Enum DOES_NOT_RETURN for does_not_return
+            /// Value DOES_NOT_RETURN for does_not_return
             /// </summary>
-            [EnumMember(Value = "does_not_return")]
-            DOES_NOT_RETURN
+            public const string DOES_NOT_RETURN = "does_not_return";
         }
 
         /// <summary>
         /// Whether this dialog node can be returned to after a digression.
         /// </summary>
-        /// <value>
-        /// Whether this dialog node can be returned to after a digression.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum DigressOutEnum
+        public class DigressOutValue
         {
-            
+
             /// <summary>
-            /// Enum ALLOW_RETURNING for allow_returning
+            /// Value ALLOW_RETURNING for allow_returning
             /// </summary>
-            [EnumMember(Value = "allow_returning")]
-            ALLOW_RETURNING,
-            
+            public const string ALLOW_RETURNING = "allow_returning";
+
             /// <summary>
-            /// Enum ALLOW_ALL for allow_all
+            /// Value ALLOW_ALL for allow_all
             /// </summary>
-            [EnumMember(Value = "allow_all")]
-            ALLOW_ALL,
-            
+            public const string ALLOW_ALL = "allow_all";
+
             /// <summary>
-            /// Enum ALLOW_ALL_NEVER_RETURN for allow_all_never_return
+            /// Value ALLOW_ALL_NEVER_RETURN for allow_all_never_return
             /// </summary>
-            [EnumMember(Value = "allow_all_never_return")]
-            ALLOW_ALL_NEVER_RETURN
+            public const string ALLOW_ALL_NEVER_RETURN = "allow_all_never_return";
         }
 
         /// <summary>
         /// Whether the user can digress to top-level nodes while filling out slots.
         /// </summary>
-        /// <value>
-        /// Whether the user can digress to top-level nodes while filling out slots.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum DigressOutSlotsEnum
+        public class DigressOutSlotsValue
         {
-            
+
             /// <summary>
-            /// Enum NOT_ALLOWED for not_allowed
+            /// Value NOT_ALLOWED for not_allowed
             /// </summary>
-            [EnumMember(Value = "not_allowed")]
-            NOT_ALLOWED,
-            
+            public const string NOT_ALLOWED = "not_allowed";
+
             /// <summary>
-            /// Enum ALLOW_RETURNING for allow_returning
+            /// Value ALLOW_RETURNING for allow_returning
             /// </summary>
-            [EnumMember(Value = "allow_returning")]
-            ALLOW_RETURNING,
-            
+            public const string ALLOW_RETURNING = "allow_returning";
+
             /// <summary>
-            /// Enum ALLOW_ALL for allow_all
+            /// Value ALLOW_ALL for allow_all
             /// </summary>
-            [EnumMember(Value = "allow_all")]
-            ALLOW_ALL
+            public const string ALLOW_ALL = "allow_all";
         }
 
         /// <summary>
         /// How the dialog node is processed.
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public NodeTypeEnum? NodeType { get; set; }
+        public string NodeType { get; set; }
         /// <summary>
         /// How an `event_handler` node is processed.
         /// </summary>
         [JsonProperty("event_name", NullValueHandling = NullValueHandling.Ignore)]
-        public EventNameEnum? EventName { get; set; }
+        public string EventName { get; set; }
         /// <summary>
         /// Whether this top-level dialog node can be digressed into.
         /// </summary>
         [JsonProperty("digress_in", NullValueHandling = NullValueHandling.Ignore)]
-        public DigressInEnum? DigressIn { get; set; }
+        public string DigressIn { get; set; }
         /// <summary>
         /// Whether this dialog node can be returned to after a digression.
         /// </summary>
         [JsonProperty("digress_out", NullValueHandling = NullValueHandling.Ignore)]
-        public DigressOutEnum? DigressOut { get; set; }
+        public string DigressOut { get; set; }
         /// <summary>
         /// Whether the user can digress to top-level nodes while filling out slots.
         /// </summary>
         [JsonProperty("digress_out_slots", NullValueHandling = NullValueHandling.Ignore)]
-        public DigressOutSlotsEnum? DigressOutSlots { get; set; }
+        public string DigressOutSlots { get; set; }
         /// <summary>
         /// The dialog node ID. This string must conform to the following restrictions:
         /// - It can contain only Unicode alphanumeric, space, underscore, hyphen, and dot characters.

@@ -32,25 +32,18 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// The sensitivity of the disambiguation feature to intent detection conflicts. Set to **high** if you want the
         /// disambiguation feature to be triggered more often. This can be useful for testing or demonstration purposes.
         /// </summary>
-        /// <value>
-        /// The sensitivity of the disambiguation feature to intent detection conflicts. Set to **high** if you want the
-        /// disambiguation feature to be triggered more often. This can be useful for testing or demonstration purposes.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SensitivityEnum
+        public class SensitivityValue
         {
             
             /// <summary>
-            /// Enum AUTO for auto
+            /// Value AUTO for auto
             /// </summary>
-            [EnumMember(Value = "auto")]
-            AUTO,
-            
+            public const string AUTO = "auto";
+
             /// <summary>
-            /// Enum HIGH for high
+            /// Value HIGH for high
             /// </summary>
-            [EnumMember(Value = "high")]
-            HIGH
+            public const string HIGH = "high";
         }
 
         /// <summary>
@@ -58,7 +51,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// disambiguation feature to be triggered more often. This can be useful for testing or demonstration purposes.
         /// </summary>
         [JsonProperty("sensitivity", NullValueHandling = NullValueHandling.Ignore)]
-        public SensitivityEnum? Sensitivity { get; set; }
+        public string Sensitivity { get; set; }
         /// <summary>
         /// The text of the introductory prompt that accompanies disambiguation options presented to the user.
         /// </summary>

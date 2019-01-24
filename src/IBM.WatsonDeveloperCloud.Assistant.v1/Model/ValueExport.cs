@@ -31,31 +31,25 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// <summary>
         /// Specifies the type of value.
         /// </summary>
-        /// <value>
-        /// Specifies the type of value.
-        /// </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ValueTypeEnum
+        public class ValueTypeValue
         {
-            
+
             /// <summary>
-            /// Enum SYNONYMS for synonyms
+            /// Value SYNONYMS for synonyms
             /// </summary>
-            [EnumMember(Value = "synonyms")]
-            SYNONYMS,
-            
+            public const string SYNONYMS = "synonyms";
+
             /// <summary>
-            /// Enum PATTERNS for patterns
+            /// Value PATTERNS for patterns
             /// </summary>
-            [EnumMember(Value = "patterns")]
-            PATTERNS
+            public const string PATTERNS = "patterns";
         }
 
         /// <summary>
         /// Specifies the type of value.
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public ValueTypeEnum? ValueType { get; set; }
+        public string ValueType { get; set; }
         /// <summary>
         /// The text of the entity value.
         /// </summary>

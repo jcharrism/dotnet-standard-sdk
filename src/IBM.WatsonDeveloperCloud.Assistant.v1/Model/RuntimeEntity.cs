@@ -15,8 +15,8 @@
 *
 */
 
-using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
 {
@@ -29,23 +29,23 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// An entity detected in the input.
         /// </summary>
         [JsonProperty("entity", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Entity { get; set; }
+        public string Entity { get; set; }
         /// <summary>
         /// An array of zero-based character offsets that indicate where the detected entity values begin and end in the
         /// input text.
         /// </summary>
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Location { get; set; }
+        public List<long> Location { get; set; }
         /// <summary>
         /// The term in the input text that was recognized as an entity value.
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Value { get; set; }
+        public string Value { get; set; }
         /// <summary>
         /// A decimal percentage that represents Watson's confidence in the entity.
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Confidence { get; set; }
+        public float Confidence { get; set; }
         /// <summary>
         /// Any metadata for the entity.
         /// </summary>
@@ -55,7 +55,6 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// The recognized capture groups for the entity, as defined by the entity pattern.
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Groups { get; set; }
+        public List<CaptureGroup> Groups { get; set; }
     }
-
 }

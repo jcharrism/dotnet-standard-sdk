@@ -29,22 +29,22 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// The text of the user input.
         /// </summary>
         [JsonProperty("input", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Input { get; set; }
+        public MessageInput Input { get; set; }
         /// <summary>
         /// An array of intents recognized in the user input, sorted in descending order of confidence.
         /// </summary>
         [JsonProperty("intents", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Intents { get; set; }
+        public List<dynamic> Intents { get; set; }
         /// <summary>
         /// An array of entities identified in the user input.
         /// </summary>
         [JsonProperty("entities", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Entities { get; set; }
+        public List<dynamic> Entities { get; set; }
         /// <summary>
         /// Whether to return more than one intent. A value of `true` indicates that all matching intents are returned.
         /// </summary>
         [JsonProperty("alternate_intents", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic AlternateIntents { get; set; }
+        public bool AlternateIntents { get; set; }
         /// <summary>
         /// State information for the conversation. To maintain state, include the context from the previous response.
         /// </summary>
@@ -60,7 +60,6 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// An array of objects describing any actions requested by the dialog node.
         /// </summary>
         [JsonProperty("actions", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Actions { get; set; }
+        public List<DialogNodeAction> Actions { get; set; }
     }
-
 }

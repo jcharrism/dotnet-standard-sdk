@@ -28,7 +28,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// The unique identifier of the conversation.
         /// </summary>
         [JsonProperty("conversation_id", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic ConversationId { get; set; }
+        public string ConversationId { get; set; }
         /// <summary>
         /// For internal use only.
         /// </summary>
@@ -38,7 +38,6 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.Model
         /// Metadata related to the message.
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic Metadata { get; set; }
+        public MessageContextMetadata Metadata { get; set; }
     }
-
 }

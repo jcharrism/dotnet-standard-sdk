@@ -26,6 +26,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using IBM.WatsonDeveloperCloud.Util;
+using System.Dynamic;
 
 namespace IBM.WatsonDeveloperCloud.Assistant.v1.IntegrationTests
 {
@@ -240,7 +241,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.IntegrationTests
         #region Get Intent
         private string GetIntent(MessageResponse messageResponse)
         {
-            return messageResponse.Intents[0]["intent"].ToString(); ;
+            return messageResponse.Intents[0].intent.ToString(); ;
         }
         #endregion
 
@@ -733,6 +734,55 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.IntegrationTests
             Assert.IsNotNull(createEntityResult);
             Assert.IsFalse(string.IsNullOrEmpty(createEntityResult.EntityName));
             Assert.IsNotNull(ListMentionsResult);
+        }
+        #endregion
+
+        #region Additional Properties
+        [TestMethod]
+        public void TestAdditionalProperties_Success()
+        {
+            string name = "Watson";
+            dynamic context = new ExpandoObject();
+            context.Name = name;
+
+            MessageRequest messageRequest0 = new MessageRequest()
+            {
+                Input = new InputData()
+                {
+                    Text = inputString
+                },
+                Context = context
+            };
+
+            MessageResponse results0 = Message(workspaceID, messageRequest0);
+            context = results0.Context;
+
+            Assert.IsTrue(context.Name == name);
+
+            MessageRequest messageRequest1 = new MessageRequest()
+            {
+                Input = new InputData()
+                {
+                    Text = assistantString0
+                },
+                Context = context
+            };
+
+            var results1 = Message(workspaceID, messageRequest1);
+            context = results1.Context;
+            Assert.IsTrue(context.Name == name);
+
+            MessageRequest messageRequest2 = new MessageRequest()
+            {
+                Input = new InputData()
+                {
+                    Text = assistantString1
+                },
+                Context = context
+            };
+
+            Assert.IsNotNull(results0);
+            Assert.IsNotNull(results1);
         }
         #endregion
 

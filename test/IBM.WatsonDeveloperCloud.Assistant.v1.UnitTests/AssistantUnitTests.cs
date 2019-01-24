@@ -2478,7 +2478,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                                 new RuntimeEntity()
                                 {
                                     Entity = "entity",
-                                    Location = new List<long?>()
+                                    Location = new List<long>()
                                     {
                                         0
                                     },
@@ -2496,11 +2496,11 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                             },
                             Output = new OutputData()
                             {
-                                LogMessages = new List<LogMessage>()
+                                LogMessages = new List<dynamic>()
                                 {
                                     new LogMessage()
                                     {
-                                        Level = LogMessage.LevelEnum.INFO,
+                                        Level = LogMessage.LevelValue.INFO,
                                         Msg = "msg"
                                     }
                                 },
@@ -2520,7 +2520,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                             {
                                 Text = "text"
                             },
-                            Intents = new List<RuntimeIntent>()
+                            Intents = new List<dynamic>()
                             {
                                 new RuntimeIntent()
                                 {
@@ -2528,12 +2528,12 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                                     Confidence = 1.0
                                 }
                             },
-                            Entities = new List<RuntimeEntity>()
+                            Entities = new List<dynamic>()
                             {
                                 new RuntimeEntity()
                                 {
                                     Entity = "entity",
-                                    Location = new List<long?>()
+                                    Location = new List<long>()
                                     {
                                         0
                                     },
@@ -2549,11 +2549,11 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                             },
                             Output = new OutputData()
                             {
-                                LogMessages = new List<LogMessage>()
+                                LogMessages = new List<dynamic>()
                                 {
                                     new LogMessage()
                                     {
-                                        Level = LogMessage.LevelEnum.INFO,
+                                        Level = LogMessage.LevelValue.INFO,
                                         Msg = "msg"
                                     }
                                 },
@@ -2635,7 +2635,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                                 new RuntimeEntity()
                                 {
                                     Entity = "entity",
-                                    Location = new List<long?>()
+                                    Location = new List<long>()
                                     {
                                         0
                                     },
@@ -2653,11 +2653,11 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                             },
                 Output = new OutputData()
                 {
-                    LogMessages = new List<LogMessage>()
+                    LogMessages = new List<dynamic>()
                                 {
                                     new LogMessage()
                                     {
-                                        Level = LogMessage.LevelEnum.INFO,
+                                        Level = LogMessage.LevelValue.INFO,
                                         Msg = "msg"
                                     }
                                 },
@@ -2700,7 +2700,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                                 new RuntimeEntity()
                                 {
                                     Entity = "entity",
-                                    Location = new List<long?>()
+                                    Location = new List<long>()
                                     {
                                         0
                                     },
@@ -2718,11 +2718,11 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                             },
                 Output = new OutputData()
                 {
-                    LogMessages = new List<LogMessage>()
+                    LogMessages = new List<dynamic>()
                                 {
                                     new LogMessage()
                                     {
-                                        Level = LogMessage.LevelEnum.INFO,
+                                        Level = LogMessage.LevelValue.INFO,
                                         Msg = "msg"
                                     }
                                 },
@@ -2773,7 +2773,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                                 new RuntimeEntity()
                                 {
                                     Entity = "entity",
-                                    Location = new List<long?>()
+                                    Location = new List<long>()
                                     {
                                         0
                                     },
@@ -2791,11 +2791,11 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                             },
                 Output = new OutputData()
                 {
-                    LogMessages = new List<LogMessage>()
+                    LogMessages = new List<dynamic>()
                                 {
                                     new LogMessage()
                                     {
-                                        Level = LogMessage.LevelEnum.INFO,
+                                        Level = LogMessage.LevelValue.INFO,
                                         Msg = "msg"
                                     }
                                 },
@@ -2832,7 +2832,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                 {
                     Text = "text"
                 },
-                Intents = new List<RuntimeIntent>()
+                Intents = new List<dynamic>()
                             {
                                 new RuntimeIntent()
                                 {
@@ -2840,12 +2840,12 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                                     Confidence = 1.0
                                 }
                             },
-                Entities = new List<RuntimeEntity>()
+                Entities = new List<dynamic>()
                             {
                                 new RuntimeEntity()
                                 {
                                     Entity = "entity",
-                                    Location = new List<long?>()
+                                    Location = new List<long>()
                                     {
                                         0
                                     },
@@ -2861,11 +2861,11 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                 },
                 Output = new OutputData()
                 {
-                    LogMessages = new List<LogMessage>()
+                    LogMessages = new List<dynamic>()
                                 {
                                     new LogMessage()
                                     {
-                                        Level = LogMessage.LevelEnum.INFO,
+                                        Level = LogMessage.LevelValue.INFO,
                                         Msg = "msg"
                                     }
                                 },
@@ -2899,7 +2899,7 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                                 new RuntimeEntity()
                                 {
                                     Entity = "entity",
-                                    Location = new List<long?>()
+                                    Location = new List<long>()
                                     {
                                         0
                                     },
@@ -2917,11 +2917,11 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1.UnitTests
                             },
                 Output = new OutputData()
                 {
-                    LogMessages = new List<LogMessage>()
+                    LogMessages = new List<dynamic>()
                                 {
                                     new LogMessage()
                                     {
-                                        Level = LogMessage.LevelEnum.INFO,
+                                        Level = LogMessage.LevelValue.INFO,
                                         Msg = "msg"
                                     }
                                 },
