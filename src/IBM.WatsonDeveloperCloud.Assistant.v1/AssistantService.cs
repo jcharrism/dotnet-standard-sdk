@@ -16,12 +16,10 @@
 */
 
 using System.Collections.Generic;
-using System.Text;
 using IBM.WatsonDeveloperCloud.Assistant.v1.Model;
 using IBM.WatsonDeveloperCloud.Http;
 using IBM.WatsonDeveloperCloud.Service;
 using IBM.WatsonDeveloperCloud.Util;
-using Newtonsoft.Json;
 using System;
 
 namespace IBM.WatsonDeveloperCloud.Assistant.v1
@@ -128,6 +126,12 @@ namespace IBM.WatsonDeveloperCloud.Assistant.v1
                 if (nodesVisitedDetails != null)
                     restRequest.WithArgument("nodes_visited_details", nodesVisitedDetails);
                 restRequest.WithBody<MessageRequest>(request);
+
+                foreach (KeyValuePair<string, string> kvp in Common.Utils.GetDefaultHeaders("Message", "assistant.v1"))
+                {
+                    restRequest.WithHeader(kvp.Key, kvp.Value);
+                }
+
                 if (customData != null)
                     restRequest.WithCustomData(customData);
                 result = restRequest.As<MessageResponse>().Result;

@@ -45,7 +45,6 @@ namespace IBM.WatsonDeveloperCloud.Http
 
             // add default headers
             request.Headers.Add("accept", formatters.SelectMany(p => p.SupportedMediaTypes).Select(p => p.MediaType));
-            request.Headers.Add("User-Agent", Constants.SDK_VERSION);
 
             return request;
         }

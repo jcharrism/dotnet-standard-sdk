@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>IBM.WatsonDeveloperCloud.Common is a set of common functionality to be used across Watson services in the Watson .NET SDK. The other Watson services depend on this package.</Description>
+    <AssemblyTitle>IBM.WatsonDeveloperCloud.Common</AssemblyTitle>
+    <VersionPrefix>2.13.0</VersionPrefix>
+    <Authors>Watson Developer Cloud</Authors>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <AssemblyName>IBM.WatsonDeveloperCloud.Common</AssemblyName>
+    <PackageId>IBM.WatsonDeveloperCloud.Common</PackageId>
+    <PackageTags>watson;cognitive;speech;vision;machine-learning;ml;ai;artificial-intelligence;.NET;.NET-Standard</PackageTags>
+    <PackageIconUrl>https://watson-developer-cloud.github.io/dotnet-standard-sdk/img/Watson_Avatar_Pos_RGB.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/watson-developer-cloud/dotnet-standard-sdk</PackageProjectUrl>
+    <NetStandardImplicitPackageVersion>1.6</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <Version>2.13.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Conversation\**\*;LanguageTranslator\**\*;SpeechToText\**\*;TextToSpeech\**\*;ToneAnalyzer\**\*;VisualRecognition\**\*;Discovery\**\*;PersonalityInsights\**\*" />
+  </ItemGroup>
+
+</Project>

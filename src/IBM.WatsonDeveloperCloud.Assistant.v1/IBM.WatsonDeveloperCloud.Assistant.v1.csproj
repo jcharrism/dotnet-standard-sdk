@@ -26,6 +26,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\IBM.Watson.Common\IBM.WatsonDeveloperCloud.Common.csproj" />
         <ProjectReference Include="..\IBM.WatsonDeveloperCloud\IBM.WatsonDeveloperCloud.csproj" />
     </ItemGroup>
 
